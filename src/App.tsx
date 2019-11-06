@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation />
+      <div>
+        <Link to="/"> Home </Link>
+      </div>
+      <div>
+        <Link to="/products"> Products </Link>
+      </div>
+      <div>
+        <Link to="/panes"> Panes </Link>
+      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/products">
+          <Products />
+        </Route>
+        <Route exact path="/panes"></Route>
+      </Switch>
+    </Router>
   );
-}
+};
+
+const Navigation = () => {
+  return <div> Router </div>;
+};
+
+const Home = () => {
+  return <div>This is the home component</div>;
+};
+
+const Products = () => {
+  return <div>This is the products component</div>;
+};
 
 export default App;
