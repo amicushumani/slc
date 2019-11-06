@@ -1,43 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
+//ts-ignore
+import ProductsComponent from './Pages/Products/index';
+import Navbar from './Components/Navbar';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Navigation />
-      <div>
-        <Link to="/"> Home </Link>
-      </div>
-      <div>
-        <Link to="/products"> Products </Link>
-      </div>
-      <div>
-        <Link to="/panes"> Panes </Link>
-      </div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/products">
-          <Products />
-        </Route>
-        <Route exact path="/panes"></Route>
-      </Switch>
+      <Navbar></Navbar>
     </Router>
   );
 };
 
-const Navigation = () => {
-  return <div> Router </div>;
-};
-
 const Home = () => {
-  return <div>This is the home component</div>;
-};
-
-const Products = () => {
-  return <div>This is the products component</div>;
+  return (
+    <div>
+      <h1>Welcome to affiliate</h1>
+    </div>
+  );
 };
 
 export default App;
