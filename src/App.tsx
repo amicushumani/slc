@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-//ts-ignore
-import ProductsComponent from './Pages/Products/index';
 import Navbar from './Components/Navbar';
 
 const App: React.FC = () => {
@@ -11,7 +9,7 @@ const App: React.FC = () => {
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to affiliate</h1>
+      <h1>Task Master</h1>
     </div>
   );
 };

@@ -34,7 +34,10 @@ class Navbar extends Component {
             <Home />
           </Route>
           <Route exact path="/products">
-            <ProductsComponent userName={'user unkown'} />
+            <ProductsComponent
+              userName={'someUsernamne'}
+              cards={{ title: 'Products Title', body: 'some product body' }}
+            />
           </Route>
           <Route exact path="/panes"></Route>
         </Switch>

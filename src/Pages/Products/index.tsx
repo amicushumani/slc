@@ -3,6 +3,7 @@ import ProductCard from '../../Components/ProductCard';
 
 interface Props {
   userName: string;
+  cards: object;
 }
 
 class ProductsComponent extends React.Component<Props, {}> {
@@ -18,6 +19,9 @@ class ProductsComponent extends React.Component<Props, {}> {
   }
 
   render() {
+    const { cards } = this.props;
+    console.log('cards', typeof cards);
+    console.log('cards', cards);
     return (
       <div>
         <h1> Products </h1>

@@ -18,6 +18,7 @@ export default class ProductCard extends Component<ProductCardProps, {}> {
     return (
       <div>
         <h1>{title}</h1>
+
         <div>{body}</div>
       </div>
     );
