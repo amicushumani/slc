@@ -23,11 +23,19 @@ class ProductsPage extends React.Component<Props, {}> {
     const { cards } = this.props;
     console.log('cards', typeof cards);
     console.log('cards', cards);
-    const products = { first: { title: 'first title' } };
+    const products = [
+      {
+        title: 'first title',
+        body: 'first body ',
+        meta: {},
+      },
+    ];
+    console.log('first product', typeof products);
+
     return (
       <div>
         <h1> Products </h1>
-        <ProductsContainer />
+        <ProductsContainer products={products} />
         <div>
           <ProductCard
             title={'Best Product'}
