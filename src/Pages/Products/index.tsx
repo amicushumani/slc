@@ -1,5 +1,4 @@
 import React from 'react';
-import ProductCard from '../../Components/ProductCard';
 import ProductsContainer from '../../Containers/Products/ProdcutsContainer';
 
 import './../Pages.css';
@@ -12,19 +11,9 @@ interface Props {
 class ProductsPage extends React.Component<Props, {}> {
   constructor(props: any) {
     super(props);
-    console.log('ProductsComponent props = ', props);
-    this.state = { productCount: 0 };
-    console.log('this.state = ', this.state);
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount ProductsComponent', this);
   }
 
   render() {
-    const { cards } = this.props;
-    console.log('cards', typeof cards);
-    console.log('cards', cards);
     const products = [
       {
         title: 'first title',
@@ -39,7 +28,6 @@ class ProductsPage extends React.Component<Props, {}> {
         meta: {},
       },
     ];
-    console.log('first product', typeof products);
 
     return (
       <div>
