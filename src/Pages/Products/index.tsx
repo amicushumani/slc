@@ -1,12 +1,13 @@
 import React from 'react';
 import ProductCard from '../../Components/ProductCard';
-
+import ProductsContainer from '../../Containers/Products/ProdcutsContainer';
+// src/Containers/Products/ProdcutsContainer.tsx
 interface Props {
   userName: string;
   cards: object;
 }
 
-class ProductsComponent extends React.Component<Props, {}> {
+class ProductsPage extends React.Component<Props, {}> {
   constructor(props: any) {
     super(props);
     console.log('ProductsComponent props = ', props);
@@ -22,10 +23,11 @@ class ProductsComponent extends React.Component<Props, {}> {
     const { cards } = this.props;
     console.log('cards', typeof cards);
     console.log('cards', cards);
+    const products = { first: { title: 'first title' } };
     return (
       <div>
         <h1> Products </h1>
-        <p>Products Container</p>
+        <ProductsContainer />
         <div>
           <ProductCard
             title={'Best Product'}
@@ -38,4 +40,4 @@ class ProductsComponent extends React.Component<Props, {}> {
   }
 }
 
-export default ProductsComponent;
+export default ProductsPage;

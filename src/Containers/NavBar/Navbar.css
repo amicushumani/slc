@@ -9,10 +9,13 @@
   text-align: center;
 }
 
-.item {
+.navbar-tab {
   width: 200px;
   height: 100%;
   display: inline-block;
   background-color: lightslategray;
   align-content: center;
+  border-radius: 15px;
+  margin-right: 1%;
+  box-shadow: black;
 }

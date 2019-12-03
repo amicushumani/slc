@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Components/Navbar';
+import Navbar from './Containers/NavBar/Navbar';
 
 const App: React.FC = () => {
   return <Navbar></Navbar>;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import Home from '../Pages/Home/index';
-import ProductsComponent from '../Pages/Products/index';
+import Home from '../../Pages/Home/index';
+import ProductsPage from '../../Pages/Products/index';
 
 import './Navbar.css';
 
@@ -18,13 +18,13 @@ class Navbar extends Component {
     return (
       <Router>
         <div className="navbar-container">
-          <div className="item">
+          <div className="navbar-tab">
             <Link to="/"> Home </Link>
           </div>
-          <div className="item">
+          <div className="navbar-tab">
             <Link to="/products"> Products </Link>
           </div>
-          <div className="item">
+          <div className="navbar-tab">
             <Link to="/panes"> Panes </Link>
           </div>
         </div>
@@ -34,7 +34,7 @@ class Navbar extends Component {
             <Home />
           </Route>
           <Route exact path="/products">
-            <ProductsComponent
+            <ProductsPage
               userName={'someUsernamne'}
               cards={{ title: 'Products Title', body: 'some product body' }}
             />
