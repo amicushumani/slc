@@ -1,24 +1,22 @@
 import React, { Component } from 'react';
+import './Components.css';
 
 interface ProductCardProps {
   title: string;
-  isAvailable: boolean;
+  isAvailable?: boolean;
   body: string;
+  meta?: object;
 }
 export default class ProductCard extends Component<ProductCardProps, {}> {
   constructor(props: any) {
     super(props);
   }
-  componentDidMount() {
-    console.log('this.prop = ', this.props);
-  }
 
   render() {
     const { title, body } = this.props;
     return (
-      <div>
+      <div className="ProductCard">
         <h1>{title}</h1>
-
         <div>{body}</div>
       </div>
     );

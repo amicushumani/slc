@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ProductCard from '../../Components/ProductCard';
+
 interface Props {
   products: Array<Products>;
 }
@@ -7,7 +9,8 @@ interface Props {
 interface Products {
   title: string;
   body: string;
-  meta: object;
+  id: number;
+  meta?: object;
 }
 
 class ProductsContainer extends Component<Props, {}> {
@@ -16,19 +19,16 @@ class ProductsContainer extends Component<Props, {}> {
   }
 
   render() {
-    console.log('Products container props ', this.props);
-    const products = this.props.products;
-    console.log(typeof products);
+    const { products } = this.props;
 
     return (
       <div>
         <h1> Products Container </h1>
         <ul>
-          {products.map((product, index) => {
+          {products.map(product => {
             return (
-              <li>
-                <h2>{product.title}</h2>
-                <p>{product.body}</p>
+              <li key={product.id}>
+                <ProductCard title={product.title} body={product.body} />
               </li>
             );
           })}

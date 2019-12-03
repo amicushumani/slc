@@ -27,6 +27,7 @@ class ProductsPage extends React.Component<Props, {}> {
       {
         title: 'first title',
         body: 'first body ',
+        id: 2,
         meta: {},
       },
     ];
