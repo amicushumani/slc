@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-
+import './../Containers.css';
 import ProductCard from '../../Components/ProductCard';
 
 interface Props {
   products: Array<Products>;
+  title: string;
 }
 
 interface Products {
@@ -20,10 +21,14 @@ class ProductsContainer extends Component<Props, {}> {
 
   render() {
     const { products } = this.props;
+    const { title } = this.props;
 
     return (
       <div>
-        <h1> Products Container </h1>
+        <div className="container-header">
+          <h1> {title} </h1>
+        </div>
+
         <ul>
           {products.map(product => {
             return (

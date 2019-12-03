@@ -1,10 +1,11 @@
 import React from 'react';
+import ProductsPage from '../Products';
 
 const Home: React.FC = () => {
   return (
     <div>
-      <h1>Welcome to Task Master</h1>
-      <p> This is the description for the home page</p>
+      <h1>Welcome back to task manager %%username%%</h1>
+      <p> Task manager is an online store for all of your task related needs</p>
     </div>
   );
 };

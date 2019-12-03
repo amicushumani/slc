@@ -1,7 +1,9 @@
 import React from 'react';
 import ProductCard from '../../Components/ProductCard';
 import ProductsContainer from '../../Containers/Products/ProdcutsContainer';
-// src/Containers/Products/ProdcutsContainer.tsx
+
+import './../Pages.css';
+
 interface Props {
   userName: string;
   cards: object;
@@ -30,20 +32,23 @@ class ProductsPage extends React.Component<Props, {}> {
         id: 2,
         meta: {},
       },
+      {
+        title: 'second title',
+        body: 'second body',
+        id: 3,
+        meta: {},
+      },
     ];
     console.log('first product', typeof products);
 
     return (
       <div>
-        <h1> Products </h1>
-        <ProductsContainer products={products} />
-        <div>
-          <ProductCard
-            title={'Best Product'}
-            isAvailable={true}
-            body={'This is a long product description'}
-          />
+        <div className="page-title">
+          <h1> Products </h1>
         </div>
+
+        <ProductsContainer title={'All Products'} products={products} />
+        <ProductsContainer title={'Featured Products'} products={products} />
       </div>
     );
   }

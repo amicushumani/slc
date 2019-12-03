@@ -9,7 +9,7 @@ import './Navbar.css';
 class Navbar extends Component {
   constructor(props: any) {
     super(props);
-    this.state = { counter: 0 };
+
     console.log('NavBar Constructore ', this.state);
     console.log('Navar props', this.props);
   }
