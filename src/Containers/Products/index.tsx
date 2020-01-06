@@ -33,7 +33,11 @@ class ProductsContainer extends Component<Props, {}> {
           {products.map(product => {
             return (
               <li key={product.id}>
-                <ProductCard title={product.title} body={product.body} />
+                <ProductCard
+                  title={product.title}
+                  body={product.body}
+                  id={product.id}
+                />
               </li>
             );
           })}

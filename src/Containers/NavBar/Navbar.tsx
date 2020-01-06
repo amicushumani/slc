@@ -3,15 +3,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from '../../Pages/Home/index';
 import ProductsPage from '../../Pages/Products/index';
+import Pane from '../../Containers/Panes/index';
 
 import './Navbar.css';
 
 class Navbar extends Component {
   constructor(props: any) {
     super(props);
-
-    console.log('NavBar Constructore ', this.state);
-    console.log('Navar props', this.props);
   }
 
   render() {
@@ -25,7 +23,7 @@ class Navbar extends Component {
             <Link to="/products"> Products </Link>
           </div>
           <div className="navbar-tab">
-            <Link to="/panes"> Panes </Link>
+            <Link to="/panes/"> Panes </Link>
           </div>
         </div>
 
@@ -39,7 +37,9 @@ class Navbar extends Component {
               cards={{ title: 'Products Title', body: 'some product body' }}
             />
           </Route>
-          <Route exact path="/panes"></Route>
+          <Route exact path="/panes/">
+            <Pane />
+          </Route>
         </Switch>
       </Router>
     );

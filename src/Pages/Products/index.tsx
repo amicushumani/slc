@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductsContainer from '../../Containers/Products/ProdcutsContainer';
+import ProductsContainer from '../../Containers/Products';
 
 import './../Pages.css';
 
@@ -17,14 +17,14 @@ class ProductsPage extends React.Component<Props, {}> {
     const products = [
       {
         title: 'first title',
-        body: 'first body ',
         id: 2,
+        body: 'first body ',
         meta: {},
       },
       {
         title: 'second title',
-        body: 'second body',
         id: 3,
+        body: 'second body',
         meta: {},
       },
     ];
