@@ -12,10 +12,6 @@ interface Props {
 }
 
 export default class ProductCard extends Component<Props, {}> {
-  constructor(props: any) {
-    super(props);
-  }
-
   handleClick(e: any) {
     console.log('this is ', this);
   }

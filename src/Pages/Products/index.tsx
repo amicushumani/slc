@@ -9,10 +9,6 @@ interface Props {
 }
 
 class ProductsPage extends React.Component<Props, {}> {
-  constructor(props: any) {
-    super(props);
-  }
-
   render() {
     const products = [
       {

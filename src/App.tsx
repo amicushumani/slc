@@ -3,7 +3,14 @@ import './App.css';
 import Navbar from './Containers/NavBar/Navbar';
 
 import { gql } from 'apollo-boost';
-import { Query } from 'react-apollo';
+import { Query, ApolloProvider } from 'react-apollo';
+
+import ApolloClient from 'apollo-boost';
+import { render } from 'enzyme';
+
+const client = new ApolloClient({
+  uri: 'https://localhost:4000/graphql',
+});
 
 const productsQuery = gql`
   query {
@@ -11,23 +18,13 @@ const productsQuery = gql`
   }
 `;
 
-const App = () => (
-  // <Query query={productsQuery}>
-  //   {({ loading, error, data }: any) => {
-  //     console.log('error', error);
-  //     if (loading) return <div>Loading...</div>;
-  //     if (error) return <div>Error :(</div>;
+const query = async () => {
+  const b = await client.query({ query: productsQuery });
+};
+const App = () => {
+  query();
 
-  //     return <div> data.hello </div>;
-  //   }}
-  // </Query>
-  <div>
-    <div>
-      <Navbar> </Navbar>
-    </div>
-  </div>
-);
-
-console.log('typeof app', typeof App);
+  return <Navbar> </Navbar>;
+};
 
 export default App;
