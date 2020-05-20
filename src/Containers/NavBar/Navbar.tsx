@@ -8,6 +8,11 @@ import Pane from '../../Containers/Panes/index';
 import './Navbar.css';
 
 class Navbar extends Component {
+  constructor(props: any) {
+    super(props);
+    console.log('props', props);
+  }
+
   render() {
     return (
       <Router>

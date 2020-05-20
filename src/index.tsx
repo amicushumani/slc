@@ -1,21 +1,23 @@
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import ApolloClient, { HttpLink } from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker';
+
+import App from './App';
 
 import './index.css';
+const client = new ApolloClient({
+  uri: 'https://localhost:8000/graphql',
+});
 
-console.log('typeof app', typeof App);
-// const withProvider = () => (
-//   <ApolloProvider client={client}>
-//     <App />
-//   </ApolloProvider>
-// );
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    {' '}
+    <App />{' '}
+  </ApolloProvider>,
+  document.getElementById('root'),
+);
 
 serviceWorker.unregister();
