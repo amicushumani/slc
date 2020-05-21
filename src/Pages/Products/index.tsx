@@ -1,11 +1,7 @@
 import React from 'react';
-
 import gql from 'graphql-tag';
-
 import { useQuery } from '@apollo/react-hooks';
-
 import ProductsContainer from '../../Containers/Products';
-
 import './../Pages.css';
 
 const productsQuery = gql(`
