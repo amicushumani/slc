@@ -1,7 +1,14 @@
 import React from 'react';
 import ProductsPage from '../Products';
+import gql from 'graphql-tag';
 
-const Home: React.FC = () => {
+const Home = () => {
+  const userNameQuery = gql`
+    user{
+      name
+      access
+    }
+  `
   const userName = 'Test User';
 
   return (
@@ -10,6 +17,6 @@ const Home: React.FC = () => {
       <p> Task manager is an online store for all of your task related needs</p>
     </div>
   );
-};
+
 
 export default Home;
