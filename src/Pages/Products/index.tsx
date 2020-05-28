@@ -5,12 +5,13 @@ import ProductsContainer from '../../Containers/Products';
 import './../Pages.css';
 
 const productsQuery = gql(`
-query {
-  myQuery {
-    hello
+  query {
+    myQuery {
+      hello
+    }
   }
-}
 `);
+
 interface ProductsPageProps {
   userName: string;
   cards: object;
@@ -19,7 +20,7 @@ interface ProductsPageProps {
 const ProductsPage = (props: ProductsPageProps) => {
   console.log('prouctsQuery', productsQuery);
   const result = useQuery(productsQuery);
-  console.log('data', result);
+  // console.log('data', result);
   const products = [
     {
       title: 'first title',

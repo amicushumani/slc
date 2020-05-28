@@ -4,9 +4,11 @@ import gql from 'graphql-tag';
 
 const Home = () => {
   const userNameQuery = gql`
-    user{
-      name
-      access
+    query{
+      user {
+        name
+        access
+      }
     }
   `
   const userName = 'Test User';
@@ -18,5 +20,6 @@ const Home = () => {
     </div>
   );
 
+};
 
 export default Home;
