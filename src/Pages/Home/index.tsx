@@ -1,6 +1,7 @@
 import React from 'react';
-import ProductsPage from '../Products';
 import gql from 'graphql-tag';
+
+import { useQuery } from '@apollo/react-hooks'
 
 const Home = () => {
   const userNameQuery = gql`
@@ -12,6 +13,9 @@ const Home = () => {
     }
   `
   const userName = 'Test User';
+  const data = useQuery(userNameQuery);
+
+  console.log('data = ', data);
 
   return (
     <div>
